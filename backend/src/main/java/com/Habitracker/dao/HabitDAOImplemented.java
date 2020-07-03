@@ -31,6 +31,7 @@ public class HabitDAOImplemented implements HabitDAO {
 
     @Override
     public void save(Habit habit) {
+        System.out.println(habit.toString());
         Session currSession = entityManager.unwrap(Session.class);
         currSession.saveOrUpdate(habit);
     }

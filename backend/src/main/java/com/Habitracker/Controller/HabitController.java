@@ -25,6 +25,16 @@ public class HabitController {
         return habit;
     }
 
+    @PostMapping("/HabitAdd")
+    public Habit save(@RequestBody String name) {
+        Habit newHabit = new Habit();
+        newHabit.setName(name);
+        newHabit.setStreak(0);
+        newHabit.setHabitId(200);
+        habitService.save(newHabit);
+        return newHabit;
+    }
+
     @GetMapping("/Habit/{id}")
     public Habit get(@PathVariable int id) {
         return habitService.get(id);

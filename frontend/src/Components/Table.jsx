@@ -81,7 +81,7 @@ export default function SimpleTable() {
         <GroupIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        User Directory
+        Habits
       </Typography>
 
       {isLoading ? (
@@ -101,11 +101,12 @@ export default function SimpleTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data?.map((row, index) => (
+              {data?.map((row, index) => ( 
                 <TableRow key={row.id}>
                   <TableCell align="center">{row.habitName}</TableCell>
                   <TableCell align="center">{row.streak}</TableCell>
-                  <TableCell align="center"> <Button onClick = { () => upDateData ( row[index].streak => row[index].streak + 1 ) } variant="contained" > Increment streak </Button></TableCell>
+                  {/* <TableCell align="center"> <Button onClick = { () => upDateData ( row[index].streak => row[index].streak + 1 ) } variant="contained" > Increment streak </Button> */}
+                  {/* </TableCell>  */}
                 </TableRow>
               ))}
             </TableBody>
